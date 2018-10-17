@@ -40,3 +40,4 @@ Guardfile
 README.html
 *.iml
 .idea
+.jdk8
