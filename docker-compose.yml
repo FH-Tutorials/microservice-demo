@@ -1,0 +1,11 @@
+services:
+  getquote:
+    build: parent/.
+    ports:
+      - "8080:8080"
+    command: sh -c "java -cp app:app/lib/* hello.Application --service.location=quoter:8090"
+  quoter:
+    build: child/.
+    ports:
+      - "8090:8080"
+    command: sh -c "java -cp app:app/lib/* hello.Application"
