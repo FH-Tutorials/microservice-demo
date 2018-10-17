@@ -3,14 +3,18 @@ services:
 
   getquote:
     image: getquote
-    build: parent
+    build:
+      context: ./parent
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     command: sh -c "java -cp app:app/lib/* hello.Application --service.location=quoter:8090"
 
   quoter:
     image: quoter
-    build: child
+    build:
+      context: ./child
+      dockerfile: Dockerfile
     ports:
       - "8090:8080"
     command: sh -c "java -cp app:app/lib/* hello.Application"
