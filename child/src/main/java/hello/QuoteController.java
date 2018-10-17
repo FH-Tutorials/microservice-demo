@@ -14,17 +14,18 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 
 @RestController
 public class QuoteController {
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Value("${service.location}")
-    private String serviceLocation;
-
     @RequestMapping("/quote")
     @GetMapping
     public Quote doQuote() {
-      Quote quote = restTemplate.getForObject(serviceLocation, Quote.class);
-      quote.getValue().setQuote( quote.getValue().getQuote() + " - attaching some value.");
-        return quote;
+      Quote quote = new Quote();
+      hello.Value value = new hello.Value();
+
+      value.setId(11L);
+      value.setQuote("I have two hours today to build an app from scratch. @springboot to the rescue!");
+
+      quote.setType("success");
+      quote.setValue(value);
+
+      return quote;
     }
 }

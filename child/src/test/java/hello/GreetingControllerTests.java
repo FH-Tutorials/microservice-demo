@@ -32,9 +32,6 @@ import org.springframework.test.context.TestPropertySource;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(properties = {
-    "service.location=http://gturnquist-quoters.cfapps.io/api/random",
-})
 public class GreetingControllerTests {
 
     @Autowired
