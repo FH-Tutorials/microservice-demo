@@ -1,4 +1,4 @@
-#Microservice Demo
+# Microservice Demo
 
 This demo illustrates how to connect two services using a docker compose
 configuration
